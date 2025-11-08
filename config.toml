@@ -1,0 +1,12 @@
+[client]
+# Hide the Deploy button in the toolbar
+toolbarMode = "minimal"
+
+[server]
+# Additional server configs
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+# Disable usage stats collection
+gatherUsageStats = false
