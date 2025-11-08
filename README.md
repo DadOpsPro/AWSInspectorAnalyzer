@@ -38,13 +38,19 @@ streamlit run VulnerabilityAnalyzer.py
 
 ### First Time Use
 1. Upload AWS Inspector JSON exports
+![main page](screenshots/main1.png)
+![main page with uploaded json files](screenshots/main2.png)
 2. Annotate each CVE with exploitability status and notes
+![By Repository View](screenshots/byRepository1.png)
+![By Repository View - Expanded](screenshots/byRepository_expandedView.png)
 3. Export to CSV (save as `master_vulnerabilities.csv`)
+![Export view](screenshots/export.png)
 
 ### Subsequent Use
 1. Upload new AWS Inspector JSON exports
 2. Upload previous Master CSV
 3. **Only new findings are displayed** for review
+![Main page - after Master CSV upload](screenshots/main3.png)
 4. Export updated Master CSV
 
 ## Features in Detail
@@ -168,26 +174,4 @@ The tool parses standard AWS Inspector JSON exports:
 - Session state stores annotations temporarily
 - Export CSV for persistent storage
 
-## Contributing
 
-Contributions welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License - See LICENSE file for details
-
-## Support
-
-For issues and questions:
-- Create an issue on GitHub
-- Check existing issues for solutions
-- Include sample data (redacted) when reporting bugs
-
-## Roadmap
-
-- [ ] JIRA integration for automatic ticket creation
-- [ ] GitLab issue creation for remediation tracking
-- [ ] Dashboard with metrics and trends
-- [ ] CVSS score filtering
-- [ ] False positive management system
-- [ ] Multi-user collaboration features
