@@ -17,8 +17,8 @@ A Streamlit-based tool for analyzing AWS Inspector findings across multiple repo
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/vulnerability-analyzer.git
-cd vulnerability-analyzer
+git clone hhttps://github.com/DadOpsPro/AWSInspectorAnalyzer.git
+cd AWSInspectorAnalyzer
 
 # Install dependencies
 pip install -r requirements.txt
