@@ -29,8 +29,6 @@ wheels/
 
 # Data files (don't commit sensitive vulnerability data)
 *.csv
-*.json
-*.xlsx
 
 # IDE
 .vscode/
