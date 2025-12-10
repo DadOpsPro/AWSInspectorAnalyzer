@@ -1,0 +1,188 @@
+{
+  "findings": [
+    {
+      "awsAccountId": "123456789012",
+      "description": "The OpenSSL library is vulnerable to a critical remote code execution flaw. An attacker could exploit this vulnerability to execute arbitrary code on the affected system.",
+      "severity": "CRITICAL",
+      "firstObservedAt": "2024-11-01T10:30:00.000Z",
+      "lastObservedAt": "2024-11-15T14:23:45.000Z",
+      "findingArn": "arn:aws:inspector2:us-east-1:123456789012:finding/0abcd1234efgh5678",
+      "status": "ACTIVE",
+      "title": "CVE-2024-1234 - OpenSSL Remote Code Execution",
+      "type": "PACKAGE_VULNERABILITY",
+      "packageVulnerabilityDetails": {
+        "vulnerabilityId": "CVE-2024-1234",
+        "source": "NVD",
+        "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-1234",
+        "cvss": {
+          "baseScore": 9.8,
+          "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "version": "3.1"
+        },
+        "vulnerablePackages": [
+          {
+            "name": "openssl",
+            "version": "1.1.1k",
+            "fixedInVersion": "1.1.1w",
+            "packageManager": "OS",
+            "arch": "X86_64"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "type": "AWS_ECR_CONTAINER_IMAGE",
+          "id": "arn:aws:ecr:us-east-1:123456789012:repository/api-service/sha256:abcd1234",
+          "details": {
+            "awsEcrContainerImage": {
+              "repositoryName": "api-service",
+              "registry": "123456789012",
+              "architecture": "amd64",
+              "imageHash": "sha256:abcd1234efgh5678ijkl9012mnop3456qrst7890uvwx1234yzab5678",
+              "imageTags": ["latest", "v1.2.3"],
+              "platform": "LINUX"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "awsAccountId": "123456789012",
+      "description": "A buffer overflow vulnerability exists in glibc that could allow an attacker to cause a denial of service or potentially execute arbitrary code.",
+      "severity": "HIGH",
+      "firstObservedAt": "2024-11-01T10:30:00.000Z",
+      "lastObservedAt": "2024-11-15T14:23:45.000Z",
+      "findingArn": "arn:aws:inspector2:us-east-1:123456789012:finding/1bcde2345fghi6789",
+      "status": "ACTIVE",
+      "title": "CVE-2024-5678 - glibc Buffer Overflow",
+      "type": "PACKAGE_VULNERABILITY",
+      "packageVulnerabilityDetails": {
+        "vulnerabilityId": "CVE-2024-5678",
+        "source": "NVD",
+        "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-5678",
+        "cvss": {
+          "baseScore": 7.8,
+          "scoringVector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "version": "3.1"
+        },
+        "vulnerablePackages": [
+          {
+            "name": "glibc",
+            "version": "2.28",
+            "fixedInVersion": "2.28-189.5",
+            "packageManager": "OS",
+            "arch": "X86_64"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "type": "AWS_ECR_CONTAINER_IMAGE",
+          "id": "arn:aws:ecr:us-east-1:123456789012:repository/api-service/sha256:abcd1234",
+          "details": {
+            "awsEcrContainerImage": {
+              "repositoryName": "api-service",
+              "registry": "123456789012",
+              "architecture": "amd64",
+              "imageHash": "sha256:abcd1234efgh5678ijkl9012mnop3456qrst7890uvwx1234yzab5678",
+              "imageTags": ["latest", "v1.2.3"],
+              "platform": "LINUX"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "awsAccountId": "123456789012",
+      "description": "Python package vulnerability that could lead to SQL injection attacks through improper input validation.",
+      "severity": "HIGH",
+      "firstObservedAt": "2024-11-15T14:23:45.000Z",
+      "lastObservedAt": "2024-11-15T14:23:45.000Z",
+      "findingArn": "arn:aws:inspector2:us-east-1:123456789012:finding/2cdef3456ghij7890",
+      "status": "ACTIVE",
+      "title": "CVE-2024-9999 - Python SQLAlchemy SQL Injection",
+      "type": "PACKAGE_VULNERABILITY",
+      "packageVulnerabilityDetails": {
+        "vulnerabilityId": "CVE-2024-9999",
+        "source": "NVD",
+        "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-9999",
+        "cvss": {
+          "baseScore": 8.1,
+          "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+          "version": "3.1"
+        },
+        "vulnerablePackages": [
+          {
+            "name": "python-sqlalchemy",
+            "version": "1.3.23",
+            "fixedInVersion": "1.4.46",
+            "packageManager": "PYTHONPKG",
+            "arch": "NOARCH"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "type": "AWS_ECR_CONTAINER_IMAGE",
+          "id": "arn:aws:ecr:us-east-1:123456789012:repository/api-service/sha256:abcd1234",
+          "details": {
+            "awsEcrContainerImage": {
+              "repositoryName": "api-service",
+              "registry": "123456789012",
+              "architecture": "amd64",
+              "imageHash": "sha256:abcd1234efgh5678ijkl9012mnop3456qrst7890uvwx1234yzab5678",
+              "imageTags": ["latest"],
+              "platform": "LINUX"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "awsAccountId": "123456789012",
+      "description": "Kernel vulnerability that could allow local privilege escalation through improper memory handling.",
+      "severity": "MEDIUM",
+      "firstObservedAt": "2024-11-01T10:30:00.000Z",
+      "lastObservedAt": "2024-11-15T14:23:45.000Z",
+      "findingArn": "arn:aws:inspector2:us-east-1:123456789012:finding/3defg4567hijk8901",
+      "status": "ACTIVE",
+      "title": "CVE-2024-3333 - Linux Kernel Privilege Escalation",
+      "type": "PACKAGE_VULNERABILITY",
+      "packageVulnerabilityDetails": {
+        "vulnerabilityId": "CVE-2024-3333",
+        "source": "NVD",
+        "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-3333",
+        "cvss": {
+          "baseScore": 6.7,
+          "scoringVector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "version": "3.1"
+        },
+        "vulnerablePackages": [
+          {
+            "name": "linux-kernel",
+            "version": "5.4.0-131",
+            "fixedInVersion": "5.4.0-135",
+            "packageManager": "OS",
+            "arch": "X86_64"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "type": "AWS_ECR_CONTAINER_IMAGE",
+          "id": "arn:aws:ecr:us-east-1:123456789012:repository/api-service/sha256:abcd1234",
+          "details": {
+            "awsEcrContainerImage": {
+              "repositoryName": "api-service",
+              "registry": "123456789012",
+              "architecture": "amd64",
+              "imageHash": "sha256:abcd1234efgh5678ijkl9012mnop3456qrst7890uvwx1234yzab5678",
+              "imageTags": ["latest"],
+              "platform": "LINUX"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

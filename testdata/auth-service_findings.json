@@ -1,0 +1,142 @@
+{
+  "findings": [
+    {
+      "awsAccountId": "123456789012",
+      "description": "PostgreSQL vulnerability that could allow SQL injection through improper query parameterization.",
+      "severity": "CRITICAL",
+      "firstObservedAt": "2024-11-01T10:30:00.000Z",
+      "lastObservedAt": "2024-11-15T14:23:45.000Z",
+      "findingArn": "arn:aws:inspector2:us-east-1:123456789012:finding/8ijkl9012mnop3456",
+      "status": "ACTIVE",
+      "title": "CVE-2024-6666 - PostgreSQL SQL Injection",
+      "type": "PACKAGE_VULNERABILITY",
+      "packageVulnerabilityDetails": {
+        "vulnerabilityId": "CVE-2024-6666",
+        "source": "NVD",
+        "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-6666",
+        "cvss": {
+          "baseScore": 9.1,
+          "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+          "version": "3.1"
+        },
+        "vulnerablePackages": [
+          {
+            "name": "postgresql",
+            "version": "12.8",
+            "fixedInVersion": "12.15",
+            "packageManager": "OS",
+            "arch": "X86_64"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "type": "AWS_ECR_CONTAINER_IMAGE",
+          "id": "arn:aws:ecr:us-east-1:123456789012:repository/auth-service/sha256:cdef3456",
+          "details": {
+            "awsEcrContainerImage": {
+              "repositoryName": "auth-service",
+              "registry": "123456789012",
+              "architecture": "amd64",
+              "imageHash": "sha256:cdef3456ghij7890klmn1234opqr5678stuv9012wxyz3456abcd7890",
+              "imageTags": ["prod-v1.5.2"],
+              "platform": "LINUX"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "awsAccountId": "123456789012",
+      "description": "JWT library vulnerability that could allow authentication bypass through weak signature verification.",
+      "severity": "HIGH",
+      "firstObservedAt": "2024-11-15T14:23:45.000Z",
+      "lastObservedAt": "2024-11-15T14:23:45.000Z",
+      "findingArn": "arn:aws:inspector2:us-east-1:123456789012:finding/9jklm0123nopq4567",
+      "status": "ACTIVE",
+      "title": "CVE-2024-8888 - PyJWT Authentication Bypass",
+      "type": "PACKAGE_VULNERABILITY",
+      "packageVulnerabilityDetails": {
+        "vulnerabilityId": "CVE-2024-8888",
+        "source": "NVD",
+        "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-8888",
+        "cvss": {
+          "baseScore": 8.6,
+          "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L",
+          "version": "3.1"
+        },
+        "vulnerablePackages": [
+          {
+            "name": "python-pyjwt",
+            "version": "1.7.1",
+            "fixedInVersion": "2.4.0",
+            "packageManager": "PYTHONPKG",
+            "arch": "NOARCH"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "type": "AWS_ECR_CONTAINER_IMAGE",
+          "id": "arn:aws:ecr:us-east-1:123456789012:repository/auth-service/sha256:cdef3456",
+          "details": {
+            "awsEcrContainerImage": {
+              "repositoryName": "auth-service",
+              "registry": "123456789012",
+              "architecture": "amd64",
+              "imageHash": "sha256:cdef3456ghij7890klmn1234opqr5678stuv9012wxyz3456abcd7890",
+              "imageTags": ["prod-v1.5.2"],
+              "platform": "LINUX"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "awsAccountId": "123456789012",
+      "description": "Redis vulnerability that could allow command injection through improper input sanitization.",
+      "severity": "HIGH",
+      "firstObservedAt": "2024-11-01T10:30:00.000Z",
+      "lastObservedAt": "2024-11-15T14:23:45.000Z",
+      "findingArn": "arn:aws:inspector2:us-east-1:123456789012:finding/0klmn1234opqr5678",
+      "status": "ACTIVE",
+      "title": "CVE-2024-5555 - Redis Command Injection",
+      "type": "PACKAGE_VULNERABILITY",
+      "packageVulnerabilityDetails": {
+        "vulnerabilityId": "CVE-2024-5555",
+        "source": "NVD",
+        "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-5555",
+        "cvss": {
+          "baseScore": 7.2,
+          "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          "version": "3.1"
+        },
+        "vulnerablePackages": [
+          {
+            "name": "redis",
+            "version": "6.2.6",
+            "fixedInVersion": "6.2.14",
+            "packageManager": "OS",
+            "arch": "X86_64"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "type": "AWS_ECR_CONTAINER_IMAGE",
+          "id": "arn:aws:ecr:us-east-1:123456789012:repository/auth-service/sha256:cdef3456",
+          "details": {
+            "awsEcrContainerImage": {
+              "repositoryName": "auth-service",
+              "registry": "123456789012",
+              "architecture": "amd64",
+              "imageHash": "sha256:cdef3456ghij7890klmn1234opqr5678stuv9012wxyz3456abcd7890",
+              "imageTags": ["prod-v1.5.2"],
+              "platform": "LINUX"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
