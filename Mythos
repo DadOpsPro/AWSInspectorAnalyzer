@@ -16,3 +16,14 @@ Constraints:
 - Keep existing pilot IT behavior identical.
 
 Use @ on H2IntegrationTestBase, asapgov-it-schema.sql, and the pilot *IT class. Show the diff first, then make the change.
+
+
+
+Add one integration test for whatever the next high-risk ResultSet class is).
+
+Smallest change:
+- Read that class and name every table it queries.
+- Add only those tables as resources/tables/0xx_TABLE.sql (numeric prefix after existing files). H2 DDL only.
+- New *IT extending H2IntegrationTestBase: insert minimal rows, call the production method, assert fillEntity() fields.
+- Do not add other ResultSets, allowlists, or seed files.
+- Show the table list and diff before editing.
