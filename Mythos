@@ -1,1 +1,24 @@
 
+You are comparing THIS scan to PRIOR scans.
+
+A potential duplicate exists only when BOTH are true:
+1. Same finding type (CWE / finding class)
+2. Same sink: Class.method if present on both sides; otherwise the same file AND the same row/line
+
+Do NOT mark duplicates for: shared Unit, similar title, same severity, or same file with a different method.
+
+Inputs:
+- @<this-scan-findings>
+- @<prior-scan-findings>   (stack rounds 1–3 if needed)
+- @<jira-export.csv>       (optional; Jira Export is fine)
+
+Jira: only attach a Key when Summary or Description mentions this finding id, this file, or this Class.method. Do not invent keys. Do not build a tracker.
+
+Output only:
+
+1. Table: this_id | type | sink_method | sink_row | prior_scan | prior_id | match | jira_keys
+2. Count of current findings that hit at least one prior sink
+3. Current findings missing type or sink (cannot judge)
+4. Current findings with type+sink and no prior hit (treat as new)
+
+No essays.
