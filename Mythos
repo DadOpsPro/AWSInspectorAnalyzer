@@ -1,23 +1,18 @@
-Investigate ONLY the NEW findings in Unit N (skip anything already flagged as a prior-scan duplicate).
+Do the smallest schema-loader change only. Do not add more ITs or convert more tables.
 
-For each finding, read the real code on this commit. Do not trust the scanner writeup if the file, type, or sink does not match.
+Context: pilot *IT is green. Shared H2, Ant forkmode=once, one JVM. ~100 Oracle tables exist in prod; we will NOT load them. H2 is a SQL-parse + fillEntity() harness, not Oracle.
 
-Decide, in this order:
-1. Is the cited sink real (file + Class.method or file:line exists)?
-2. Is the code dead / not shipped / unreachable from a running local app?
-3. What sits in front of the sink (auth filter, role check, CSRF, allowlist, parameterization, encoding, feature flag, network-only-admin)?
-4. Who must the attacker already be: unauthenticated, authenticated user, or admin?
-5. How hard to exploit locally (low / medium / high) given those preconditions?
-6. Verdict: exploitable | not_exploitable | false_positive | dead_code | needs_runtime
+Goal:
+1. Split the current monolithic IT schema into per-table files under resources/tables/ with a numeric load-order prefix (match asap-common/General/Migrations/database/ style).
+2. Update H2IntegrationTestBase to load every resources/tables/*.sql once in @BeforeClass, sorted by filename.
+3. Move the existing SPT_COUNTRY_INFO DDL out of asapgov-it-schema.sql into resources/tables/010_SPT_COUNTRY_INFO.sql and remove the old single-file fixture if nothing else remains in it.
 
-Output per finding, nothing else:
+Constraints:
+- No per-class table allowlists.
+- DDL only in resources/tables/. No seed INSERTs in those files.
+- Do not invent FK ordering beyond the numeric prefix. One table today.
+- Do not translate the rest of the Oracle schema.
+- Do not switch to Testcontainers.
+- Keep existing pilot IT behavior identical.
 
-### [id] [type] [sink]
-Verdict:
-Attacker needs:
-Mitigations in front:
-Difficulty:
-Summary: (2–3 sentences max)
-Local test steps: (numbered; only if verdict is exploitable or needs_runtime. Use local URLs, sample payloads, and expected vs safe response. No production testing.)
-
-Files: @<unit-N-findings> @<relevant-source>
+Use @ on H2IntegrationTestBase, asapgov-it-schema.sql, and the pilot *IT class. Show the diff first, then make the change.
