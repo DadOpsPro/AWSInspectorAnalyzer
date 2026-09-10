@@ -1,3 +1,28 @@
+Investigate ONLY the NEW findings in Unit N (skip anything already flagged as a prior-scan duplicate).
+
+For each finding, read the real code on this commit. Do not trust the scanner writeup if the file, type, or sink does not match.
+
+Decide, in this order:
+1. Is the cited sink real (file + Class.method or file:line exists)?
+2. Is the code dead / not shipped / unreachable from a running local app?
+3. What sits in front of the sink (auth filter, role check, CSRF, allowlist, parameterization, encoding, feature flag, network-only-admin)?
+4. Who must the attacker already be: unauthenticated, authenticated user, or admin?
+5. How hard to exploit locally (low / medium / high) given those preconditions?
+6. Verdict: exploitable | not_exploitable | false_positive | dead_code | needs_runtime
+
+Output per finding, nothing else:
+
+### [id] [type] [sink]
+Verdict:
+Attacker needs:
+Mitigations in front:
+Difficulty:
+Summary: (2–3 sentences max)
+Local test steps: (numbered; only if verdict is exploitable or needs_runtime. Use local URLs, sample payloads, and expected vs safe response. No production testing.)
+
+
+
+
 Do the smallest schema-loader change only. Do not add more ITs or convert more tables.
 
 Context: pilot *IT is green. Shared H2, Ant forkmode=once, one JVM. ~100 Oracle tables exist in prod; we will NOT load them. H2 is a SQL-parse + fillEntity() harness, not Oracle.
