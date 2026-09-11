@@ -52,3 +52,12 @@ Smallest change:
 - New *IT extending H2IntegrationTestBase: insert minimal rows, call the production method, assert fillEntity() fields.
 - Do not add other ResultSets, allowlists, or seed files.
 - Show the table list and diff before editing.
+
+
+
+
+py -c "import openpyxl; wb=openpyxl.load_workbook(r'C:\Users\<you>\git\mythos-scan\findings\Round4\HANDBACK_COMPLETE_ROUND4.xlsx', data_only=True); print('sheets', wb.sheetnames); ws=wb.active; print('active', ws.title); rows=ws.iter_rows(values_only=True); hdr=next(rows); print('headers', hdr); sevs=set();
+for i,r in enumerate(rows):
+    if i>5000: break
+    print('first data row', r); break
+"
